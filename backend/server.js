@@ -218,6 +218,11 @@ app.post('/api/auth/verify-otp', (req, res) => {
     });
 });
 
+// Root route to serve the main page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../pages/index.html'));
+});
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`Cart Auth Backend running on http://localhost:${PORT}`);
